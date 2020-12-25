@@ -23,12 +23,15 @@ class SearchUserViewController: UIViewController, UISearchBarDelegate {
         userName.text=user?.login
         if let url=self.user?.avatar_url{
             AF.request(url).response(){response in
-                self.userImage.image=UIImage(data: response.data!)
+                self.userImage.image=UIImage(data: response.data!,scale: 2.0)
             }
         }
         if user==nil {
-        userName.text="no user"
+            userName.text="no user"
             userImage.image=nil
+            if searchBar.text == ""{
+                userName.text=""
+            }
         }
     }
     
@@ -64,6 +67,7 @@ class SearchUserViewController: UIViewController, UISearchBarDelegate {
         performSegue(withIdentifier: "UserDetail", sender: nil)
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UserDetail"{

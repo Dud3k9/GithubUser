@@ -81,7 +81,12 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Tsx-UQ-Zmv">
-                        <barButtonItem key="rightBarButtonItem" image="info.circle.fill" catalog="system" id="sQk-d9-aNI"/>
+                        <barButtonItem key="rightBarButtonItem" image="info.circle.fill" catalog="system" id="sQk-d9-aNI">
+                            <connections>
+                                <action selector="onTapInfo:" destination="BYZ-38-t0r" id="3Bt-va-EMl"/>
+                                <segue destination="DEo-7N-ygd" kind="showDetail" identifier="about" id="8OO-n5-GUu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -99,12 +104,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="130.76923076923077" y="61.137440758293835"/>
+            <point key="canvasLocation" x="100" y="71"/>
         </scene>
-        <!--User Detail View Controller-->
+        <!--User Detail View Conroller-->
         <scene sceneID="93a-UN-4oj">
             <objects>
-                <viewController id="AxO-aS-q2y" customClass="UserDetailViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AxO-aS-q2y" customClass="UserDetailViewConroller" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pKA-24-VWn">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,6 +121,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfd-91-zzy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1022" y="60"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4Gz-q0-Z81">
+            <objects>
+                <viewController id="DEo-7N-ygd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t6G-SH-aKO">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Bcz-6k-RP8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVX-Ri-sap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="780"/>
         </scene>
     </scenes>
     <resources>
