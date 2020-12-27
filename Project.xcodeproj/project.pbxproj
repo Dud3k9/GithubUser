@@ -66,9 +66,9 @@
 			children = (
 				0C96F5EA258154480013848B /* AppDelegate.swift */,
 				0C96F5EC258154480013848B /* SceneDelegate.swift */,
+				0CF2F9192598D781008D14BB /* RepoDetailsViewController.swift */,
 				0C96F5EE258154480013848B /* SearchUserViewController.swift */,
 				0CF2F9152597CB21008D14BB /* ReposViewController.swift */,
-				0CF2F9192598D781008D14BB /* RepoDetailsViewController.swift */,
 				0C512ECB25966E6F0040889D /* Models.swift */,
 				0C96F5F0258154480013848B /* Main.storyboard */,
 				0C96F5F32581544D0013848B /* Assets.xcassets */,
