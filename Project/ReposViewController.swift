@@ -14,18 +14,34 @@ class ReposViewController: UITableViewController  {
     var user:User?
     var repos : [Repo]=[]
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reload(nil)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "repoDetails", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "repoDetails"{
+            let viewController = segue.destination as! RepoDetailsViewController
+            if let indexPath = tableView.indexPathForSelectedRow{
+                viewController.repo=repos[indexPath.row]
+            }
+        }
+            
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         repos.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =tableView.dequeueReusable("repoCell") as!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "repoCell",for: indexPath) as! RepoTableViewCell
+        cell.repoName.text=repos[indexPath.row].name
+        return cell
     }
     
     @IBAction func reload(_ sender: Any?) {
@@ -41,6 +57,7 @@ class ReposViewController: UITableViewController  {
                 do{
                     let downloadedRepos = try JSONDecoder().decode([Repo].self, from: data)
                     self.repos=downloadedRepos
+                    self.tableView.reloadData()
                 }catch{
                     self.presentError(error)
                 }
@@ -55,4 +72,8 @@ class ReposViewController: UITableViewController  {
         self.present(alert, animated: true)
     }
     
+}
+
+class RepoTableViewCell : UITableViewCell{
+    @IBOutlet weak var repoName: UILabel!
 }

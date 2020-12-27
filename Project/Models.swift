@@ -14,17 +14,17 @@ struct User : Decodable{
     let avatar_url:String
     let followers:Int
     let public_repos:Int
-    let bio:String
+    let bio:String?
 }
 
 struct Repo :Decodable{
     let name : String
-    let description :String
-    let languages_url :String
+    let description :String?
+    let languages_url :String?
     let stargazers_count :Int
     let watchers_count :Int
     let forks_count : Int
-    let licence :Licence
+    let license :Licence?
 }
 
 struct Licence :Decodable{
