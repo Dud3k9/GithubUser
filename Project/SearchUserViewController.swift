@@ -15,24 +15,42 @@ class SearchUserViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateData()
         searchBar.delegate=self
     }
   
     
     func updateData(){
+        if user==nil {
+            userName.text="no user"
+            userRepos.text=nil
+            userFollowers.text=nil
+            userBio.text=nil
+            userImage.image=nil
+            if searchBar.text == ""{
+                userName.text=""
+            }
+            return
+        }
+        
         userName.text=user?.login
+        
+        if let repos = user?.public_repos{
+            userRepos.text="Repos: \(String(describing: repos))"
+        }
+        if let followers = user?.followers{
+            userFollowers.text="Followers: \(String(describing: followers))"
+        }
+        if let bio = user?.bio{
+            userBio.text=String(describing: bio)
+        }
+        
         if let url=self.user?.avatar_url{
             AF.request(url).response(){response in
                 self.userImage.image=UIImage(data: response.data!,scale: 2.0)
             }
         }
-        if user==nil {
-            userName.text="no user"
-            userImage.image=nil
-            if searchBar.text == ""{
-                userName.text=""
-            }
-        }
+        
     }
     
     func downloadUser(username : String){
@@ -64,14 +82,14 @@ class SearchUserViewController: UIViewController, UISearchBarDelegate {
     
     @IBAction func onTapUser(_ sender: Any) {
         if user != nil{
-        performSegue(withIdentifier: "UserDetail", sender: nil)
+        performSegue(withIdentifier: "reposList", sender: nil)
         }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "UserDetail"{
-            let viewController = segue.destination as! UserDetailViewConroller
+        if segue.identifier == "reposList"{
+            let viewController = segue.destination as! ReposViewController
             viewController.user=self.user
         }
     }
@@ -81,7 +99,9 @@ class SearchUserViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userView: UIView!
-    
+    @IBOutlet weak var userRepos: UILabel!
+    @IBOutlet weak var userFollowers: UILabel!
+    @IBOutlet weak var userBio: UILabel!
     
    }
 
