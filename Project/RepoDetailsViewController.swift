@@ -12,7 +12,7 @@ import Alamofire
 class RepoDetailsViewController : UIViewController{
     
     var repo:Repo?
-    var languages:[String]?
+    var languages:[String:Int]?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -22,11 +22,23 @@ class RepoDetailsViewController : UIViewController{
     
     func updateData(){
         if let repo=repo{
-            print(repo)
             repoName.text=repo.name
             repoStars.text=String(repo.stargazers_count)
             repoWatches.text=String(repo.watchers_count)
             repoforks.text=String(repo.forks_count)
+            
+            
+            if let languages = languages{
+                
+                var languageString="Languages:\n"
+                languages.forEach{(key,value) in
+                    languageString.append(key+"\n")
+                }
+                repoLanguages.text=languageString
+            }else{
+                repoLanguages.text="No Languages"
+            }
+            
             if let description=repo.description{
                 repoDescription.text="Description:\n\(description)"
             }else{
@@ -36,9 +48,6 @@ class RepoDetailsViewController : UIViewController{
                 repoLicense.text="License:\n\(license.name)"
             }else{
                 repoLicense.text="No License"
-            }
-            if let languages = languages{
-                repoLanguages.text="Languages:\(languages[0])"
             }
             
             
@@ -52,13 +61,13 @@ class RepoDetailsViewController : UIViewController{
                     self.presentError(error)
                 }
                 if let data=response.data{
-//                    do{
-//                        let downloadedLanguages=try JSONDecoder().decode(//todo, from: data)
-//                       self.languages=downloadedLanguages
-//                        self.updateData()
-//                    }catch{
-//                        self.presentError(error)
-//                    }
+                    do{
+                        let downloadedLanguages=try JSONDecoder().decode([String : Int].self, from: data)
+                       self.languages=downloadedLanguages
+                        self.updateData()
+                    }catch{
+                        self.presentError(error)
+                    }
                 }
             }
         }
