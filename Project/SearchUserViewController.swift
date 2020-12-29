@@ -36,7 +36,7 @@ class SearchUserViewController: UIViewController, UISearchBarDelegate {
         userName.text=user?.login
         
         if let repos = user?.public_repos{
-            userRepos.text="Repos: \(String(describing: repos))"
+            userRepos.text="Repositories: \(String(describing: repos))"
         }
         if let followers = user?.followers{
             userFollowers.text="Followers: \(String(describing: followers))"

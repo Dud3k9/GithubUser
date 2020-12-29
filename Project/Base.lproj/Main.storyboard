@@ -145,14 +145,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repoCell" id="Yk7-7v-gXy" customClass="RepoTableViewCell" customModule="Project" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="42.5"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yk7-7v-gXy" id="Kim-Y9-crE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bf-go-pCi">
-                                            <rect key="frame" x="24" y="10" width="50.5" height="22.5"/>
+                                            <rect key="frame" x="24" y="10" width="50.5" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -316,50 +316,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PJATK" translatesAutoresizingMaskIntoConstraints="NO" id="0Ma-cZ-42K">
-                                <rect key="frame" x="16" y="40" width="150" height="191"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GitHub" translatesAutoresizingMaskIntoConstraints="NO" id="JGx-lQ-GGf">
-                                <rect key="frame" x="156" y="54" width="241" height="163"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="226" verticalHuggingPriority="264" horizontalCompressionResistancePriority="758" verticalCompressionResistancePriority="758" image="PJATK" translatesAutoresizingMaskIntoConstraints="NO" id="0Ma-cZ-42K">
+                                <rect key="frame" x="18" y="76" width="150" height="166"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="xn8-lm-cf1"/>
+                                    <constraint firstAttribute="width" constant="150" id="SF9-pv-mjr"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author: Maciej Petrykowski" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTt-ha-Rk3">
-                                <rect key="frame" x="48.5" y="333" width="264.5" height="27"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project for classes PRO on PJATK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-d7-WZA">
-                                <rect key="frame" x="11" y="263" width="339" height="27.5"/>
+                                <rect key="frame" x="18" y="301" width="339" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26.5" id="YxZ-hE-6XD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author: Maciej Petrykowski" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTt-ha-Rk3">
+                                <rect key="frame" x="66" y="378" width="243" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="80q-Nn-PPW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="200" verticalHuggingPriority="200" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" image="GitHub" translatesAutoresizingMaskIntoConstraints="NO" id="JGx-lQ-GGf">
+                                <rect key="frame" x="165" y="59" width="241" height="200"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcz-6k-RP8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0Ma-cZ-42K" firstAttribute="centerY" secondItem="JGx-lQ-GGf" secondAttribute="centerY" id="28e-Xm-zjt"/>
-                            <constraint firstItem="Bcz-6k-RP8" firstAttribute="trailing" secondItem="0Ma-cZ-42K" secondAttribute="trailing" constant="209" id="3AF-Aj-V94"/>
-                            <constraint firstItem="p1W-d7-WZA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bcz-6k-RP8" secondAttribute="leading" id="4Ts-Yh-2F3"/>
-                            <constraint firstItem="LTt-ha-Rk3" firstAttribute="top" secondItem="p1W-d7-WZA" secondAttribute="bottom" constant="42.5" id="7mb-Ce-4OI"/>
-                            <constraint firstItem="Bcz-6k-RP8" firstAttribute="trailing" secondItem="LTt-ha-Rk3" secondAttribute="trailing" constant="62" id="KVm-hX-g8R"/>
-                            <constraint firstItem="Bcz-6k-RP8" firstAttribute="bottom" secondItem="LTt-ha-Rk3" secondAttribute="bottom" constant="287" id="Lwe-ab-JmQ"/>
-                            <constraint firstItem="LTt-ha-Rk3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bcz-6k-RP8" secondAttribute="leading" id="X4a-oI-aDe"/>
-                            <constraint firstItem="0Ma-cZ-42K" firstAttribute="top" secondItem="Bcz-6k-RP8" secondAttribute="top" constant="40" id="cjD-b0-5L4"/>
-                            <constraint firstItem="0Ma-cZ-42K" firstAttribute="leading" secondItem="t6G-SH-aKO" secondAttribute="leadingMargin" id="gVF-0h-j4A"/>
-                            <constraint firstItem="Bcz-6k-RP8" firstAttribute="trailing" secondItem="p1W-d7-WZA" secondAttribute="trailing" constant="25" id="hYX-gU-f1S"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JGx-lQ-GGf" secondAttribute="trailing" constant="-38" id="pFV-IR-78E"/>
-                            <constraint firstItem="JGx-lQ-GGf" firstAttribute="top" secondItem="Bcz-6k-RP8" secondAttribute="top" constant="54" id="sdu-Sx-3Y9"/>
-                            <constraint firstItem="JGx-lQ-GGf" firstAttribute="leading" secondItem="Bcz-6k-RP8" secondAttribute="leading" constant="156" id="syM-UC-2qp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JGx-lQ-GGf" secondAttribute="trailing" constant="-47" id="4re-gd-shd"/>
+                            <constraint firstItem="0Ma-cZ-42K" firstAttribute="leading" secondItem="t6G-SH-aKO" secondAttribute="leadingMargin" constant="2" id="7n0-9p-NEb"/>
+                            <constraint firstItem="0Ma-cZ-42K" firstAttribute="top" secondItem="t6G-SH-aKO" secondAttribute="topMargin" constant="76" id="9co-PL-OEG"/>
+                            <constraint firstItem="0Ma-cZ-42K" firstAttribute="centerY" secondItem="JGx-lQ-GGf" secondAttribute="centerY" id="MZc-hH-JzR"/>
+                            <constraint firstItem="LTt-ha-Rk3" firstAttribute="top" secondItem="p1W-d7-WZA" secondAttribute="bottom" constant="50.5" id="TKX-Qg-Jj8"/>
+                            <constraint firstItem="LTt-ha-Rk3" firstAttribute="centerX" secondItem="Bcz-6k-RP8" secondAttribute="centerX" id="Xyq-bS-pq3"/>
+                            <constraint firstItem="Bcz-6k-RP8" firstAttribute="bottom" secondItem="LTt-ha-Rk3" secondAttribute="bottom" constant="229" id="bKj-Bb-yZd"/>
+                            <constraint firstItem="JGx-lQ-GGf" firstAttribute="top" secondItem="Bcz-6k-RP8" secondAttribute="top" constant="59" id="kNV-lG-E88"/>
+                            <constraint firstItem="p1W-d7-WZA" firstAttribute="leading" secondItem="0Ma-cZ-42K" secondAttribute="leading" id="kyi-gL-5pv"/>
+                            <constraint firstItem="Bcz-6k-RP8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p1W-d7-WZA" secondAttribute="trailing" symbolic="YES" id="o8w-yK-NiU"/>
+                            <constraint firstItem="p1W-d7-WZA" firstAttribute="top" secondItem="JGx-lQ-GGf" secondAttribute="bottom" constant="42" id="pHc-Ps-bsf"/>
+                            <constraint firstItem="LTt-ha-Rk3" firstAttribute="centerX" secondItem="t6G-SH-aKO" secondAttribute="centerX" id="pqK-l7-Aku"/>
+                            <constraint firstItem="JGx-lQ-GGf" firstAttribute="leading" secondItem="0Ma-cZ-42K" secondAttribute="trailing" constant="-3" id="ysb-bE-IR2"/>
+                            <constraint firstItem="p1W-d7-WZA" firstAttribute="centerX" secondItem="Bcz-6k-RP8" secondAttribute="centerX" id="z04-6X-7ke"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVX-Ri-sap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="779.8578199052132"/>
+            <point key="canvasLocation" x="100" y="779.46026986506752"/>
         </scene>
     </scenes>
     <resources>
